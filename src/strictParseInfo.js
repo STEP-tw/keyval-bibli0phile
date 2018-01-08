@@ -3,14 +3,11 @@ const ParseInfo=require("./parseInfo.js");
 const InvalidKeyError=require("./errors/invalidKeyError.js");
 
 const contains=function(list,key,state) {
-  let newKey=key;
   return list.find(function(validKey){
-    let newValidKey = validKey;
     if(!state){
-      newKey = key.toLowerCase();
-      newValidKey = validKey.toLowerCase();
+      return key.toLowerCase() == validKey.toLowerCase();
     }
-    return newKey==newValidKey;
+    return key==validKey;
   });
 }
 

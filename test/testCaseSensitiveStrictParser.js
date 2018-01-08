@@ -35,7 +35,8 @@ describe("strict parser that is case insensitive",function(){
     // false indicates that case sensitive is false. By default it is true
     let expected=new Parsed();
     expected["nAmE"]="jayanth";
-    let parsed=kvParser.parse("nAmE=jayanth");
+    expected["agE"]="40";
+    let parsed=kvParser.parse("nAmE=jayanth agE=40");
     assert.deepEqual(parsed,expected);
   });
   it("should parse when specified keys are multiple with digit and both keys are in mixed case",function(){
