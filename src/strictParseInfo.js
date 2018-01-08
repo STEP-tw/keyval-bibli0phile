@@ -5,10 +5,14 @@ const InvalidKeyError=require("./errors/invalidKeyError.js");
 const contains=function(list,key,state) {
   return list.find(function(validKey){
     if(!state){
-      return key.toLowerCase() == validKey.toLowerCase();
+      return isValidKey(key,validKey);
     }
     return key==validKey;
   });
+}
+
+const isValidKey = function(key,presentKey) {
+  return key.toLowerCase() == presentKey.toLowerCase();
 }
 
 var StrictParseInfo=function(initialParsingFunction,validKeys,state) {
