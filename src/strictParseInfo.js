@@ -4,11 +4,10 @@ const InvalidKeyError=require("./errors/invalidKeyError.js");
 
 const contains=function(list,key,state) {
   let newKey=key;
-  if(!state)
-    newKey = key.toLowerCase();
   return list.find(function(validKey){
     let newValidKey = validKey;
     if(!state){
+      newKey = key.toLowerCase();
       newValidKey = validKey.toLowerCase();
     }
     return newKey==newValidKey;
