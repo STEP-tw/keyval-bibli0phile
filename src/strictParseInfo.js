@@ -2,7 +2,7 @@ const Parsed=require("./parsed.js");
 const ParseInfo=require("./parseInfo.js");
 const InvalidKeyError=require("./errors/invalidKeyError.js");
 
-const contains=function(list,key,state=true) {
+const contains=function(list,key,state) {
   return list.find(function(validKey){
     if(!state){
       return key.toLowerCase() == validKey.toLowerCase();
