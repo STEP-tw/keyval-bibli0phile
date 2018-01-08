@@ -35,7 +35,7 @@ describe("strict parser",function(){
     let kvParser=new StrictParser(["name","age"]);
     let actual=kvParser.parse("name=john age=23");
     let expected={name:"john",age:"23"};
-    assert.ownInclude(expected,actual,);
+    assert.ownInclude(expected,actual);
     assert.throws(
       () => {
         var p=kvParser.parse("color=blue");
