@@ -82,4 +82,14 @@ describe("strict parser that is case sensitive",function(){
       kvParser.parse("abcd=jayanth");
     })
   });
+  it("should throw error when no status is passing and it is case sensitive",function(){
+    let kvParser=new StrictParser(["AbcD","naMe"]);
+    // true indicates that parser is case sensitive
+    assert.throws(()=>{
+      kvParser.parse("NAME=jayanth");
+    })
+    assert.throws(()=>{
+      kvParser.parse("abcd=jayanth");
+    })
+  });
 });
