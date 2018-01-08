@@ -7,8 +7,6 @@ const InvalidKeyError=require(errors('invalidKeyError.js'));
 
 
 const errorMessage = function(key,pos) {
-  // let errors=new InvalidKeyError(pos);
-  // let errorString=;
   if(invalidKeyErrorChecker(key,pos))
     return `invalid key`;
 };
